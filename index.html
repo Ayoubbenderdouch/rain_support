@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain Sounds - Sleep & Relax | Natural Sounds for Better Sleep</title>
+    <meta name="description" content="Rain Sounds helps you sleep better with high-quality nature sounds and beautiful HD videos. Download now for iOS and Android.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4fc3f7;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4fc3f7;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #4fc3f7, #81d4fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #b0bec5;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+            color: #000;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(79, 195, 247, 0.3);
+        }
+
+        .btn svg {
+            margin-right: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #4fc3f7;
+        }
+
+        .feature-card p {
+            color: #b0bec5;
+        }
+
+        /* Sounds Section */
+        .sounds {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .sounds h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .sounds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .sound-card {
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.1), rgba(41, 182, 246, 0.05));
+            padding: 25px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .sound-card:hover {
+            transform: scale(1.05);
+        }
+
+        .sound-emoji {
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+
+        .sound-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .sound-info p {
+            color: #b0bec5;
+            font-size: 0.9rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 100px 0;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .benefits-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+
+        .benefit-check {
+            color: #4fc3f7;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .benefit-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .benefit-item p {
+            color: #b0bec5;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.2), rgba(41, 182, 246, 0.1));
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: #b0bec5;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links {
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: #b0bec5;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #4fc3f7;
+        }
+
+        .copyright {
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features h2,
+            .sounds h2,
+            .benefits h2,
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Rain Sounds</div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#sounds">Sounds</a>
+                    <a href="support.html">Support</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Sleep Better Tonight</h1>
+                <p>Relax and fall asleep faster with high-quality nature sounds and beautiful HD videos. Rain, ocean, thunder, and fireplace sounds at your fingertips.</p>
+                <div class="download-buttons">
+                    <a href="#" class="btn btn-primary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        App Store
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                        </svg>
+                        Google Play
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <h2>Why Rain Sounds?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎵</div>
+                        <h3>10 Premium Sounds</h3>
+                        <p>High-quality nature sounds including rain, thunder, ocean waves, and crackling fire. All recorded in studio quality.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎬</div>
+                        <h3>HD Video Backgrounds</h3>
+                        <p>Every sound comes with a beautiful HD video. Watch rain falling or waves crashing while you relax.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Smart Sleep Timer</h3>
+                        <p>Set a timer and the app stops automatically. Perfect for falling asleep without worrying about turning it off.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📴</div>
+                        <h3>Works Offline</h3>
+                        <p>No internet required. All sounds and videos are included with the app. Use it anywhere, anytime.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔋</div>
+                        <h3>Low Battery Usage</h3>
+                        <p>Optimized for all-night playback. Sleep peacefully without draining your battery.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚫</div>
+                        <h3>No Ads</h3>
+                        <p>Enjoy uninterrupted relaxation. No pop-ups, no banners, no interruptions. Just pure peace.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sounds Section -->
+        <section class="sounds" id="sounds">
+            <div class="container">
+                <h2>Premium Sound Library</h2>
+                <div class="sounds-grid">
+                    <div class="sound-card">
+                        <div class="sound-emoji">🌧️</div>
+                        <div class="sound-info">
+                            <h4>Rain Original</h4>
+                            <p>Gentle steady rainfall</p>
+                        </div>
+                    </div>
+                    <div class="sound-card">
+                        <div class="sound-emoji">🪟</div>
+                        <div class="sound-info">
+                            <h4>Rain on Window</h4>
+                            <p>Raindrops on glass</p>
+                        </div>
+                    </div>
+                    <div class="sound-card">
+                        <div class="sound-emoji">🎧</div>
+                        <div class="sound-info">
+                            <h4>Rain 3D</h4>
+                            <p>Immersive 3D audio</p>
+                        </div>
+                    </div>
+                    <div class="sound-card">
+                        <div class="sound-emoji">🌅</div>
+                        <div class="sound-info">
+                            <h4>Morning Rain</h4>
+                            <p>Peaceful countryside</p>
+                        </div>
+                    </div>
+                    <div class="sound-card">
+                        <div class="sound-emoji">☀️</div>
+                        <div class="sound-info">
+                            <h4>Summer Rain</h4>
+                            <p>Warm summer rainfall</p>
+                        </div>
+                    </div>
+                    <div class="sound-card">
+                        <div class="sound-emoji">⛈️</div>
+                        <div class="sound-info">
+                            <h4>Thunder Storm</h4>
+                            <p>Rolling thunder</p>
+                        </div>
+                    </div>
+                    <div class="sound-card">
+                        <div class="sound-emoji">🌊</div>
+                        <div class="sound-info">
+                            <h4>Ocean Waves</h4>
+                            <p>Calming sea waves</p>
+                        </div>
+                    </div>
+                    <div class="sound-card">
+                        <div class="sound-emoji">🏖️</div>
+                        <div class="sound-info">
+                            <h4>Ocean Classic</h4>
+                            <p>Beach surf sounds</p>
+                        </div>
+                    </div>
+                    <div class="sound-card">
+                        <div class="sound-emoji">🏕️</div>
+                        <div class="sound-info">
+                            <h4>Fire Forest</h4>
+                            <p>Crackling campfire</p>
+                        </div>
+                    </div>
+                    <div class="sound-card">
+                        <div class="sound-emoji">🔥</div>
+                        <div class="sound-info">
+                            <h4>Fireplace</h4>
+                            <p>Cozy fireplace</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <div class="container">
+                <h2>Perfect For</h2>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <div>
+                            <h4>Better Sleep</h4>
+                            <p>Fall asleep faster and stay asleep longer with consistent, soothing sounds that mask disruptive noises.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <div>
+                            <h4>Meditation & Mindfulness</h4>
+                            <p>Create the ideal environment for your meditation practice with calming nature sounds.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <div>
+                            <h4>Focus & Productivity</h4>
+                            <p>Block out office distractions and improve concentration during work or study sessions.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <div>
+                            <h4>Stress Relief</h4>
+                            <p>Reduce stress and calm your mind with scientifically-proven nature sounds.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-check">✓</span>
+                        <div>
+                            <h4>Baby Sleep</h4>
+                            <p>Help your baby fall asleep with gentle, consistent sounds that create a peaceful environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Start Sleeping Better Tonight</h2>
+                <p>Download Rain Sounds free and discover the difference nature sounds can make.</p>
+                <div class="download-buttons">
+                    <a href="#" class="btn btn-primary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        Download for iOS
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                        </svg>
+                        Download for Android
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p class="copyright">&copy; 2024 Rain Sounds. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

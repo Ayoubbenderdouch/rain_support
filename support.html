@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Rain Sounds | Help & Contact</title>
+    <meta name="description" content="Get help with Rain Sounds app. Find answers to frequently asked questions or contact our support team.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4fc3f7;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #4fc3f7, #81d4fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0bec5;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #4fc3f7;
+        }
+
+        .contact-card p {
+            color: #b0bec5;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .email-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .email-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(79, 195, 247, 0.3);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 60px 0;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #4fc3f7;
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: #b0bec5;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Info Cards */
+        .info-section {
+            padding: 60px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .info-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #4fc3f7;
+        }
+
+        .info-card p {
+            color: #b0bec5;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links {
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: #b0bec5;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #4fc3f7;
+        }
+
+        .copyright {
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-card {
+                padding: 30px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Rain Sounds</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#features">Features</a>
+                    <a href="support.html">Support</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>How Can We Help?</h1>
+                <p>Find answers to common questions or reach out to our support team. We're here to help you get the most out of Rain Sounds.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h2>Contact Support</h2>
+                    <p>Have a question, feedback, or need help? Send us an email and we'll get back to you as soon as possible.</p>
+                    <a href="mailto:support@rainsounds.app" class="email-link">support@rainsounds.app</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>How do I use the sleep timer?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tap the timer icon in the top right corner of the main screen. Select your desired duration (30 minutes, 1 hour, 2 hours, or set a custom time). The app will automatically stop playing after the selected time. Perfect for falling asleep!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Does the app work offline?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All sounds and videos are included with the app. No internet connection is required to use Rain Sounds. Perfect for airplane mode, camping, or areas with poor connectivity.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I play sounds with the screen locked?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Rain Sounds supports background playback. Your selected sound will continue playing when you lock your screen or switch to other apps. You can also control playback from your lock screen or headphones.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How much battery does the app use?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Rain Sounds is optimized for low battery usage. Audio playback uses minimal power, especially with the screen locked. You can comfortably use the app throughout the night without significantly draining your battery.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Why are there videos with each sound?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Each sound comes with a matching HD video background to enhance your relaxation experience. Watch rain falling, waves crashing, or fire flickering while you listen. The visual element helps create a more immersive and calming atmosphere.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is my data collected or shared?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. Rain Sounds does not collect any personal data, does not track your usage, and never shares your information with third parties. Your privacy is fully protected. The app works entirely offline.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I report a bug or suggest a feature?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We'd love to hear from you! Send us an email at support@rainsounds.app with details about the bug or your feature suggestion. We read every message and continuously work to improve the app based on user feedback.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is Rain Sounds available on both iOS and Android?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Rain Sounds is available on both the Apple App Store (for iPhone and iPad) and Google Play Store (for Android devices). The experience is consistent across both platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-card-icon">⚡</div>
+                        <h3>Quick Response</h3>
+                        <p>We typically respond to support requests within 24-48 hours.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">🔄</div>
+                        <h3>Regular Updates</h3>
+                        <p>We continuously improve the app with new sounds and features.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">❤️</div>
+                        <h3>User Focused</h3>
+                        <p>Your feedback shapes the future of Rain Sounds. We listen!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <p class="copyright">&copy; 2024 Rain Sounds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
